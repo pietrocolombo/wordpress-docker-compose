@@ -3,6 +3,7 @@ FROM wordpress:latest
 MAINTAINER Harald Nezbeda <hn@nezhar.com>
 
 RUN apt-get update && \
+	apt-get install apt-utils && \
 	apt-get install -y  --no-install-recommends ssl-cert && \
 	rm -r /var/lib/apt/lists/* && \
 	a2enmod ssl && \
